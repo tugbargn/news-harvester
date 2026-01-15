@@ -51,7 +51,7 @@ export BREVO_API_KEY="your-api-key"
 export SENDER_EMAIL="news@yourdomain.com"
 export SENDER_NAME="News Monitor"
 export DAILY_NEWS_RECIPIENT="your-email@example.com"
-export ILKYAR_ALERT_RECIPIENT="special-recipient@example.com"
+export ALERT_RECIPIENT="special-recipient@example.com"
 ```
 
 ### 4. Verify Sender Email in Brevo
@@ -119,7 +119,7 @@ jobs:
           SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
           SENDER_NAME: "News Monitor"
           DAILY_NEWS_RECIPIENT: ${{ secrets.DAILY_NEWS_RECIPIENT }}
-          ILKYAR_ALERT_RECIPIENT: ${{ secrets.ILKYAR_ALERT_RECIPIENT }}
+          ALERT_RECIPIENT: ${{ secrets.ALERT_RECIPIENT }}
         run: python news_monitor.py
 ```
 
@@ -134,7 +134,7 @@ Deploy the script to any cloud platform that supports scheduled tasks.
 ### Add More Keywords
 
 ```python
-MONITORED_KEYWORDS = ["ilkyar", "another_keyword", "third_keyword"]
+MONITORED_KEYWORDS = ["keyword", "another_keyword", "third_keyword"]
 ```
 
 ### Change News Source Language
