@@ -1,0 +1,18 @@
+services:
+  - type: cron
+    name: news-monitor
+    runtime: python
+    schedule: "0 8 * * *"
+    buildCommand: pip install -r requirements.txt
+    startCommand: python news_monitor.py
+    envVars:
+      - key: BREVO_API_KEY
+        sync: false
+      - key: SENDER_EMAIL
+        sync: false
+      - key: SENDER_NAME
+        value: "News Monitor"
+      - key: DAILY_NEWS_RECIPIENT
+        sync: false
+      - key: ILKYAR_ALERT_RECIPIENT
+        sync: false
